@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎮 TU PS4 HEN | Ajustes 🎮</title>
+  <style>
+    @font-face {
+      font-family: 'Pricedown'; 
+      src: url('web-fonts/Pricedown.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'MODERNE';
+      src: url('MODERNE%20SANS.eot');
+      src: local('MODERNE Regular'), local('MODERNE SANS'),
+           url('MODERNE%20SANSd41d.eot?#iefix') format('embedded-opentype'),
+           url('MODERNE%20SANS.woff2') format('woff2'),
+           url('MODERNE%20SANS.woff') format('woff'),
+           url('MODERNE%20SANS.ttf') format('truetype'),
+           url('MODERNE%20SANS.svg#MODERNE') format('svg');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      margin: 0;
+      font-family: 'MODERNE', monospace;
+    }
+
+    h1 {
+      font-size: 10rem;
+      color: #FFFFFF;
+      margin: 5px;
+      text-shadow: 1px 1px 10px #777;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-family: 'Pricedown', sans-serif; 
+      color: #FFFFFF;
+      margin: 10px;
+      text-shadow: 
+        1px 1px 0px black, 
+        -1px -1px 0px black,
+        1px -1px 0px black, 
+        -1px 1px 0px black; 
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      margin: 10px;
+      text-shadow: 1px 1px 2px #777;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      margin: 10px;
+      text-shadow: 1px 1px 2px #777;
+    }
+
+    main {
+      margin-top: 30px;
+    }
+
+    @keyframes arcoiris {
+      0% { color: red; }
+      16.6% { color: orange; }
+      33.3% { color: yellow; }
+      50% { color: green; }
+      66.6% { color: blue; }
+      83.3% { color: indigo; }
+      100% { color: red; }
+    }
+
+    .arcoiris {
+      font-size: 1.2em;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      animation: arcoiris 18s linear infinite; 
+    }
+
+    .contenedor-transparente {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .contenedor-transparente select {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-align: center;
+      backdrop-filter: blur(3px);
+    }
+
+    .contenedor-transparente select option {
+      background-color: #333;
+      color: white;
+    }
+
+    .select-contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .select-contenedor select {
+      flex: 1 1 calc(33.333% - 30px);
+      max-width: calc(33.333% - 30px);
+    }
+
+    .boton {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      backdrop-filter: blur(3px);
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .botones-contenedor {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <br><br>
+    <h2>🎮  <span class="arcoiris">AJUSTES</span>  🎮</h2>
+
+    <main>
+      <div class="contenedor-transparente">
+        <h4>Configuracion Personalizada de TU PS4 HEN</h4>
+        <h3>¿Que deseas modificar?</h3>
+
+		<div class="select-contenedor">
+		  <select id="opcion1">
+			  <option disabled selected>-- Configuracion --</option>
+			  <option value="changeTitle">✏️ Cambiar título principal</option>
+			  <option disabled>-- Personalizar --</option>
+                          <option value="changeSystemName">🛠️ Cambiar Titulo de Pestaña HTML</option>
+			  <option disabled>-- Informacion --</option>
+                          <option value="infoAlert">📜 Fase Testing</option>
+		  </select>
+		  </select>
+
+			<select id="opcion2">
+			  <option disabled selected>-- Cambiar Fondo --</option>
+			  <option value="img1">🖼️ [Extra] PlayStation (1)</option>
+			  <option value="img2">🖼️ [Extra] Grand Theft Auto VI (1)</option>
+			  <option value="img3">🖼️ [Extra] Grand Theft Auto VI (2)</option>
+			  <option value="img4">🖼️ [Extra] Dragon Ball (1)</option>
+			  <option value="img5">🖼️ [Extra] Dragon Ball (2)</option>
+			  <option value="img6">🖼️ [Extra] Dragon Ball (3)</option>
+			  <option value="img7">🖼️ [Extra] Dragon Ball (4)</option>
+			  <option value="img8">🖼️ [Extra] Dragon Ball (5)</option>
+			  <option value="img9">🖼️ [Extra] Spider-Man (1)</option>
+			  <option value="img10">🖼️ [Extra] Spider-Man (2)</option>
+			  <option value="img11">🖼️ [Extra] Spider-Man (3)</option>
+			  <option value="img12">🖼️ [Extra] Assassin's Creed Brotherhood (1)</option>
+			  <option value="img13">🖼️ [Extra] Assassin's Creed II (1)</option>
+			  <option value="img14">🖼️ [Extra] Assassin's Creed IV Black Flag (1)</option>
+			  <option value="img15">🖼️ [Extra] Assassin's Creed IV Black Flag (2)</option>
+                          <option disabled>-- Configuracion --</option>
+			  <option value="customURL">🌐 URL Personalizada</option>
+			  <option value="removeBackground">🧹 Eliminar fondo</option>
+			  <option value="default">♻️ Restablecer fondo por defecto</option>
+			</select>
+
+		  <select id="opcion3">
+			<option disabled selected>-- En progeso --</option>
+			<option value="valor3a">No disponible 1</option>
+			<option value="valor3b">No disponible 2</option>
+			<option disabled>-- En progreso --</option>
+			<option value="valor3a">No disponible 1</option>
+			<option value="valor3b">No disponible 2</option>
+		  </select>
+
+		<select id="opcion4">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion5">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion6">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion7">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion8">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion9">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion10">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion11">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+		
+		<select id="opcion12">
+		  <option disabled selected>-- En progeso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		  <option disabled>-- En progreso --</option>
+		  <option value="valor3a">No disponible 1</option>
+		  <option value="valor3b">No disponible 2</option>
+		</select>
+	     </div>
+
+        <div class="botones-contenedor">
+          <button class="boton" onclick="window.location.href='index.html';">🔄 Volver al menu</button>
+          <button class="boton" onclick="resetAllSettings()">🔄 Restablecer por defecto</button>
+        </div>
+      </div>
+    </main>
+
+    <br><br>
+    <h3>Creado por TheZodiacoX</h3>
+  </center>
+
+	<script src="javascript/autoscript.js"></script>
+	<script src="javascript/menu1.js"></script>
+	<script src="javascript/menu2.js"></script>
+
+</body>
+</html>
