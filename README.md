@@ -1,3 +1,3 @@
 # README
 
-![img](https://imgur.com/a/IJAKtAs)
+![img](https://i.imgur.com/j8AvpyM.png)
