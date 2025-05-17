@@ -1,0 +1,31 @@
+CACHE MANIFEST 
+# TU PS4 HEN Website	
+
+index.html
+javascript/menu1.js
+javascript/autoscript.js
+javascript/menu2.js
+settings.html
+web-fonts/Pricedown.otf
+background/default.jpg
+background/extra3.jpg
+background/extra11.jpg
+background/extra7.jpg
+background/extra12.jpg
+background/extra5.jpg
+background/extra14.jpg
+background/extra6.jpg
+background/extra9.jpg
+background/extra13.jpg
+background/extra10.jpg
+background/extra1.jpg
+background/extra2.jpg
+background/extra8.jpg
+background/extra4.jpg
+background/extra15.jpg
+
+NETWORK:
+*
+
+SETTINGS:
+prefer-online:

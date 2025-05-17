@@ -77,14 +77,29 @@ document.addEventListener("DOMContentLoaded", detect_device);
 function resetAllSettings() {
   const confirmar = confirm("¿Estás seguro de que quieres restablecer todos los ajustes?");
   if (confirmar) {
-    localStorage.removeItem("customBackground");      // fondo de index
-    localStorage.removeItem("settingsBackground");    // fondo de ajustes
-    localStorage.removeItem("customTitle");           // título personalizado
-    localStorage.removeItem("customSystemName");      // nombre del sistema
-    localStorage.removeItem("whiteBackground");       // fondo blanco si lo hubo
-    localStorage.removeItem("currentBackgroundTemp"); // temporal, por si acaso
+    localStorage.removeItem("customBackground");  
+    localStorage.removeItem("settingsBackground"); 
+    localStorage.removeItem("customTitle");     
+    localStorage.removeItem("customSystemName"); 
+    localStorage.removeItem("whiteBackground");    
+    localStorage.removeItem("currentBackgroundTemp");
 
     alert("✅ Todos los ajustes han sido restablecidos.");
-    location.reload(); // Recarga para aplicar los cambios
+    location.reload();
   }
+}
+
+function inicializarCache() {
+    window.applicationCache.ondownloading = function () {
+        document.getElementById("progress").innerHTML = "Iniciando proceso de caché...";
+    };
+    window.applicationCache.onprogress = function (a) {
+        document.getElementById("progress").innerHTML = (Math.round(100 * (a.loaded / a.total))) + "%";
+    };
+    window.applicationCache.oncached = function () {
+        document.getElementById("progress").innerHTML = "Se ha almacenado la caché exitosamente!!";
+        setTimeout(function () {
+            document.getElementById("progress").innerHTML = "Abre de nuevo el navegador!!";
+        }, 1500);
+    };
 }
