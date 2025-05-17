@@ -1,5 +1,5 @@
 function initSettingsMenu1() {
-  const nombreSistema = localStorage.getItem("customSystemName");
+  const nombreSistema = localStorage.getItem("tph_customTitleHTML");
   if (nombreSistema) {
     document.title = `🎮 ${nombreSistema} | Menu 🎮`;
   }
@@ -11,19 +11,19 @@ function initSettingsMenu1() {
     const selectedValue = dropdown.value;
 
     switch (selectedValue) {
-      case "changeSystemName":
-        const nuevoNombre = prompt("Introduce el nuevo nombre del sistema:");
+      case "tph_changetitleHTML":
+        const nuevoNombre = prompt("Introduce el texto para reemplazar:");
         if (nuevoNombre) {
-          localStorage.setItem("customSystemName", nuevoNombre);
+          localStorage.setItem("tph_customTitleHTML", nuevoNombre);
           document.title = `🎮 ${nuevoNombre} | Menu 🎮`;
-          alert("✅ Nombre del sistema actualizado.");
+          alert("✅ Titulo HTML Actualizado.");
         }
         break;
 
-      case "changeTitle":
-        const nuevoTitulo = prompt("Introduce el nuevo texto para el título:");
+      case "tph_changeTitle":
+        const nuevoTitulo = prompt("Introduce el texto para reemplazar el título principal:");
         if (nuevoTitulo) {
-          localStorage.setItem("customTitle", nuevoTitulo);
+          localStorage.setItem("tph_customTitle", nuevoTitulo);
           alert("✅ Título actualizado.");
         }
         break;
@@ -37,9 +37,30 @@ function initSettingsMenu1() {
   });
 }
 
+function initIndexMenu1() {
+  const titulo = localStorage.getItem("tph_customTitle");
+  const nombreSistema = localStorage.getItem("tph_customTitleHTML");
+  
+  if (titulo) {
+    const span = document.querySelector("h2 .arcoiris");
+    if (span) {
+      span.textContent = titulo;
+    }
+  }
+
+  if (nombreSistema) {
+    document.title = `🎮 ${nombreSistema} | Menu 🎮`;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const isSettings1 = document.getElementById("opcion1") !== null;
   if (isSettings1) {
     initSettingsMenu1();
+  }
+
+  const isIndex = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+  if (isIndex) {
+    initIndexMenu1();
   }
 });

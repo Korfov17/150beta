@@ -74,32 +74,17 @@ function detect_device() {
 
 document.addEventListener("DOMContentLoaded", detect_device);
 
-function resetAllSettings() {
+function tph_resetSettings() {
   const confirmar = confirm("¿Estás seguro de que quieres restablecer todos los ajustes?");
   if (confirmar) {
-    localStorage.removeItem("customBackground");  
-    localStorage.removeItem("settingsBackground"); 
-    localStorage.removeItem("customTitle");     
-    localStorage.removeItem("customSystemName"); 
-    localStorage.removeItem("whiteBackground");    
+    localStorage.removeItem("tph_customBackground");  
+    localStorage.removeItem("tph_settingsBackground"); 
+    localStorage.removeItem("tph_customTitle");     
+    localStorage.removeItem("tph_customTitleHTML"); 
+    localStorage.removeItem("tph_whiteBackground");    
     localStorage.removeItem("currentBackgroundTemp");
 
     alert("✅ Todos los ajustes han sido restablecidos.");
     location.reload();
   }
-}
-
-function inicializarCache() {
-    window.applicationCache.ondownloading = function () {
-        document.getElementById("progress").innerHTML = "Iniciando proceso de caché...";
-    };
-    window.applicationCache.onprogress = function (a) {
-        document.getElementById("progress").innerHTML = (Math.round(100 * (a.loaded / a.total))) + "%";
-    };
-    window.applicationCache.oncached = function () {
-        document.getElementById("progress").innerHTML = "Se ha almacenado la caché exitosamente!!";
-        setTimeout(function () {
-            document.getElementById("progress").innerHTML = "Abre de nuevo el navegador!!";
-        }, 1500);
-    };
 }

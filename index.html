@@ -186,7 +186,13 @@
 	     <script src="javascript/autoscript.js"></script>
 	     <script src="javascript/menu1.js"></script>
 	     <script src="javascript/menu2.js"></script>
-      
+
+   <script>
+        window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Iniciando proceso de caché...";};
+        window.applicationCache.onprogress=function(a){document.getElementById("progress").innerHTML=(Math.round(100*(a.loaded/a.total)))+"%";};
+        window.applicationCache.oncached=function(){document.getElementById("progress").innerHTML="Se ha almacenado la caché exitosamente!!";setTimeout(function(){document.getElementById("progress").innerHTML="Abre de nuevo el navegador!!"; }, 1500);};
+    </script>
+	    
     </main>
    <br><br><br><br><br><br><br><br><br><br>
     <h3 id=progress style='font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:white;'></h3><br>

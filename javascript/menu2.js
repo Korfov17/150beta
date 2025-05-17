@@ -1,6 +1,6 @@
-function initSettingsPage() {
-  const whiteBG = localStorage.getItem("whiteBackground");
-  const fondoAjustes = localStorage.getItem("settingsBackground");
+function initSettingsMenu2() {
+  const whiteBG = localStorage.getItem("tph_whiteBackground");
+  const fondoAjustes = localStorage.getItem("tph_settingsBackground");
 
   if (whiteBG === "true") {
     setWhiteBackground();
@@ -8,11 +8,6 @@ function initSettingsPage() {
     applyBackground(fondoAjustes);
   } else {
     applyDefaultBackground();
-  }
-
-  const nombreSistema = localStorage.getItem("customSystemName");
-  if (nombreSistema) {
-    document.title = `🎮 ${nombreSistema} | Menu 🎮`;
   }
 
   const dropdown = document.getElementById("opcion2");
@@ -25,73 +20,91 @@ function initSettingsPage() {
     let nuevoGradiente = null;
 
     // Extra IMG
-    if (selectedValue.startsWith("img")) {
-      const numero = selectedValue.replace("img", "");
+    if (selectedValue.startsWith("tph_img")) {
+      const numero = selectedValue.replace("tph_img", "");
       nuevaImagen = `background/extra${numero}.jpg`;
     }
 
     // URL Custom
-    else if (selectedValue === "customURL") {
-      const url = prompt("Introduce la URL de la imagen de fondo:");
+    else if (selectedValue === "tph_customURL") {
+      const url = prompt("Introduce la URL para aplicar como fondo:");
       if (url) nuevaImagen = url;
     }
 
     // Hex Color
-    else if (selectedValue.startsWith("solid")) {
+    else if (selectedValue.startsWith("tph_solid")) {
       const colores = {
-        solidRed: "#ff0000",
-        solidBlue: "#0000ff",
-        solidGreen: "#16b516",
-        solidYellow: "#ffff00",
-        solidOrange: "#eb6b00",
-        solidPurple: "#800080",
-        solidPink: "#e02284",
-        solidBrown: "#8b4513",
-        solidGray: "#b4b4b4",
-        solidBlack: "#000000"
+        tph_solidRed: "#ff0000",
+        tph_solidBlue: "#0000ff",
+        tph_solidGreen: "#16b516",
+        tph_solidYellow: "#ffff00",
+        tph_solidOrange: "#eb6b00",
+        tph_solidPurple: "#800080",
+        tph_solidPink: "#e02284",
+        tph_solidBrown: "#8b4513",
+        tph_solidGray: "#b4b4b4",
+        tph_solidBlack: "#000000"
       };
       nuevoColor = colores[selectedValue];
     }
 
-    else if (selectedValue.startsWith("gradient")) {
+    // Custom Hex Color
+    else if (selectedValue === "tph_customColor") {
+      const colorPersonalizado = prompt("Introduce el código hexadecimal del color (ej. #ffcc00):");
+      if (colorPersonalizado) nuevoColor = colorPersonalizado;
+    }
+
+    // Gradient
+    else if (selectedValue.startsWith("tph_gradient")) {
       const degradados = {
-        gradient1: "linear-gradient(to right, #2193b0, #6dd5ed)",
-        gradient2: "linear-gradient(to right, #ff0000, #ffff00)",
-        gradient3: "linear-gradient(to right, #008000, #bfff00)",
-        gradient4: "linear-gradient(to right, #00c6ff, #ffffff)"
+        tph_gradient1: "linear-gradient(135deg, #ff6a5c 0%, #ffb88c 50%, #ffffff 100%)",
+        tph_gradient2: "linear-gradient(to right, #d0003a 0%, #ff6b81 60%, #ffffff 100%)",
+        tph_gradient3: "linear-gradient(120deg, #7f00ff 0%, #3f51b5 60%, #ffffff 100%)",
+        tph_gradient4: "linear-gradient(to right, #00c9ff 0%, #92fe9d 60%, #ffffff 100%)",
       };
       nuevoGradiente = degradados[selectedValue];
     }
 
-    // Custom Hex Color
-    else if (selectedValue === "customColor") {
-      const colorPersonalizado = prompt("Introduce el código del color (ej. #ffcc00):");
-      if (colorPersonalizado) nuevoColor = colorPersonalizado;
+    // Remove Background
+    else if (selectedValue === "tph_removeBackground") {
+      localStorage.removeItem("tph_settingsBackground");
+      localStorage.removeItem("tph_customBackground");
+      localStorage.setItem("tph_whiteBackground", "true");
+      setWhiteBackground();
+      alert("✅ Fondo eliminado.");
     }
 
-    // Apply IMG
+    // Background Default
+    else if (selectedValue === "tph_default") {
+      localStorage.removeItem("tph_settingsBackground");
+      localStorage.removeItem("tph_customBackground");
+      localStorage.removeItem("tph_whiteBackground");
+      alert("✅ Fondo restablecido por defecto.");
+      location.reload();
+    }
+
+    // Apply background if one was set
     if (nuevaImagen) {
-      localStorage.setItem("customBackground", nuevaImagen);
-      const aplicarEnAjustes = confirm("¿También quieres aplicarlo en ajustes?");
+      localStorage.setItem("tph_customBackground", nuevaImagen);
+      const aplicarEnAjustes = confirm("¿Quieres aplicar el fondo en el menú de ajustes?");
       if (aplicarEnAjustes) {
-        localStorage.setItem("settingsBackground", nuevaImagen);
-        localStorage.removeItem("whiteBackground");
+        localStorage.setItem("tph_settingsBackground", nuevaImagen);
+        localStorage.removeItem("tph_whiteBackground");
         applyBackground(nuevaImagen);
       } else {
         mantenerFondoActual();
       }
-      alert("✅ Fondo guardado para el menú.");
+      alert("✅ Fondo guardado correctamente.");
     }
 
-    // Apply Hex Color
     else if (nuevoColor) {
       const valor = `color:${nuevoColor}`;
       applyBackground(valor);
-      localStorage.setItem("customBackground", valor);
-      const aplicarEnAjustes = confirm("¿También quieres aplicar este color en ajustes?");
+      localStorage.setItem("tph_customBackground", valor);
+      const aplicarEnAjustes = confirm("¿Quieres aplicar este color como fondo en el menú de ajustes?");
       if (aplicarEnAjustes) {
-        localStorage.setItem("settingsBackground", valor);
-        localStorage.removeItem("whiteBackground");
+        localStorage.setItem("tph_settingsBackground", valor);
+        localStorage.removeItem("tph_whiteBackground");
       } else {
         mantenerFondoActual();
       }
@@ -99,57 +112,39 @@ function initSettingsPage() {
     }
 
     else if (nuevoGradiente) {
-      const valor = `gradient:${nuevoGradiente}`;
+      const valor = `tph_gradient:${nuevoGradiente}`;
       applyBackground(valor);
-      localStorage.setItem("customBackground", valor);
-      const aplicarEnAjustes = confirm("¿También quieres aplicar este degradado en ajustes?");
+      localStorage.setItem("tph_customBackground", valor);
+      const aplicarEnAjustes = confirm("¿Quieres aplicar este degradado como fondo en el menú de ajustes?");
       if (aplicarEnAjustes) {
-        localStorage.setItem("settingsBackground", valor);
-        localStorage.removeItem("whiteBackground");
+        localStorage.setItem("tph_settingsBackground", valor);
+        localStorage.removeItem("tph_whiteBackground");
       } else {
         mantenerFondoActual();
       }
       alert("✅ Degradado aplicado como fondo.");
     }
 
-    // Remove Background
-    else if (selectedValue === "removeBackground") {
-      localStorage.removeItem("settingsBackground");
-      localStorage.removeItem("customBackground");
-      localStorage.setItem("whiteBackground", "true");
-      setWhiteBackground();
-      alert("✅ Fondos eliminados. Ambos fondos ahora son blancos.");
-    }
-
-    // Background Default
-    else if (selectedValue === "default") {
-      localStorage.removeItem("settingsBackground");
-      localStorage.removeItem("customBackground");
-      localStorage.removeItem("whiteBackground");
-      alert("✅ Fondos restablecidos por defecto.");
-      location.reload();
-    }
-
+    // Reset dropdown al placeholder
     dropdown.selectedIndex = 0;
   });
 }
 
 function mantenerFondoActual() {
-  const fondoActualSettings = localStorage.getItem("settingsBackground");
+  const fondoActualSettings = localStorage.getItem("tph_settingsBackground");
   if (fondoActualSettings) {
     applyBackground(fondoActualSettings);
-  } else if (localStorage.getItem("whiteBackground") === "true") {
+  } else if (localStorage.getItem("tph_whiteBackground") === "true") {
     setWhiteBackground();
   } else {
     applyDefaultBackground();
   }
 }
 
-function initIndexPage() {
-  const whiteBG = localStorage.getItem("whiteBackground");
-  const fondo = localStorage.getItem("customBackground");
-  const titulo = localStorage.getItem("customTitle");
-  const nombreSistema = localStorage.getItem("customSystemName");
+// Parte 2: Solo aplica el fondo al index
+function initIndexMenu2() {
+  const whiteBG = localStorage.getItem("tph_whiteBackground");
+  const fondo = localStorage.getItem("tph_customBackground");
 
   if (whiteBG === "true") {
     setWhiteBackground();
@@ -158,26 +153,16 @@ function initIndexPage() {
   } else {
     applyDefaultBackground();
   }
-
-  if (titulo) {
-    const span = document.querySelector("h2 .arcoiris");
-    if (span) {
-      span.textContent = titulo;
-    }
-  }
-
-  if (nombreSistema) {
-    document.title = `🎮 ${nombreSistema} | Menu 🎮`;
-  }
 }
 
+// Aplicar el fondo según el tipo
 function applyBackground(valor) {
   if (valor.startsWith("color:")) {
     document.body.style.backgroundImage = "none";
     document.body.style.backgroundColor = valor.replace("color:", "");
-  } else if (valor.startsWith("gradient:")) {
+  } else if (valor.startsWith("tph_gradient:")) {
     document.body.style.backgroundColor = "";
-    document.body.style.backgroundImage = valor.replace("gradient:", "");
+    document.body.style.backgroundImage = valor.replace("tph_gradient:", "");
   } else {
     document.body.style.backgroundColor = "";
     document.body.style.backgroundImage = `url('${valor}')`;
@@ -187,6 +172,7 @@ function applyBackground(valor) {
   }
 }
 
+// Fondo por defecto
 function applyDefaultBackground() {
   document.body.style.backgroundColor = "";
   document.body.style.backgroundImage = "url('background/default.jpg')";
@@ -195,16 +181,18 @@ function applyDefaultBackground() {
   document.body.style.backgroundPosition = "center";
 }
 
+// Fondo blanco
 function setWhiteBackground() {
   document.body.style.backgroundImage = "none";
   document.body.style.backgroundColor = "#000000";
 }
 
+// Autodetectar si estamos en ajustes o index
 document.addEventListener("DOMContentLoaded", () => {
   const isSettings = document.getElementById("opcion2") !== null;
   if (isSettings) {
-    initSettingsPage();
+    initSettingsMenu2();
   } else {
-    initIndexPage();
+    initIndexMenu2();
   }
 });
