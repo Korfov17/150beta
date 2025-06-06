@@ -81,10 +81,111 @@ function tph_resetSettings() {
     localStorage.removeItem("tph_settingsBackground"); 
     localStorage.removeItem("tph_customTitle");     
     localStorage.removeItem("tph_customTitleHTML"); 
-    localStorage.removeItem("tph_whiteBackground");    
+    localStorage.removeItem("tph_whiteBackground");  
+    localStorage.removeItem("tph_filterUserAgent");
     localStorage.removeItem("currentBackgroundTemp");
 
     alert("✅ Todos los ajustes han sido restablecidos.");
     location.reload();
   }
+}
+
+function tph_exportJSON() {
+    const selectedKeys = [
+        'tph_customBackground',
+        'tph_settingsBackground',
+        'tph_customTitle',
+        'tph_customTitleHTML',
+        'tph_filterUserAgent',
+        'tph_whiteBackground'
+    ];
+    const localStorageData = {};
+
+    selectedKeys.forEach(key => {
+        const value = localStorage.getItem(key);
+        if (value !== null) {
+            localStorageData[key] = value;
+        }
+    });
+
+    const finalData = {
+        "TU PS4 HEN CONFIG JSON": {
+            "version_json": "v1.0.0",
+            ...localStorageData
+        }
+    };
+
+    const blob = new Blob([JSON.stringify(finalData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'tups4hen_config.json';
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
+function tph_importJSON() {
+    const useURL = confirm("¿Quieres cargar la configuracion JSON desde una URL?");
+    
+    if (useURL) {
+        const jsonURL = prompt("Introduce la URL de la configuracion JSON:");
+        
+        if (jsonURL) {
+            fetch(jsonURL)
+                .then(response => response.json())
+                .then(data => {
+                    if (data["TU PS4 HEN CONFIG JSON"]) {
+                        const importedData = data["TU PS4 HEN CONFIG JSON"];
+                        for (let key in importedData) {
+                            if (importedData.hasOwnProperty(key)) {
+                                localStorage.setItem(key, importedData[key]);
+                            }
+                        }
+                        alert("✅ Se ha importado la configuracion JSON con exito.");
+                         location.reload()
+                    } else {
+                        alert("❌ La configuracion JSON no es valida.");
+                    }
+                })
+                .catch(error => {
+                    alert("❌ Error: " + error);
+                });
+        }
+    } else {
+        const inputFile = document.createElement('input');
+        inputFile.type = 'file';
+        inputFile.accept = '.json';
+        
+        inputFile.addEventListener('change', event => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        
+                        if (data["TU PS4 HEN CONFIG JSON"]) {
+                            const importedData = data["TU PS4 HEN CONFIG JSON"];
+                            for (let key in importedData) {
+                                if (importedData.hasOwnProperty(key)) {
+                                    localStorage.setItem(key, importedData[key]);
+                                }
+                            }
+                            alert("✅ Se ha importado la configuracion JSON con exito.");
+                            location.reload()
+                        } else {
+                            alert("❌ La configuracion JSON no es valida.");
+                        }
+                    } catch (error) {
+                        alert("❌ Error: " + error);
+                    }
+                };
+                reader.readAsText(file);
+            }
+        });
+        
+        inputFile.click();
+    }
 }
