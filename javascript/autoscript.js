@@ -15,15 +15,14 @@ function detect_device() {
         } else if (versionPS4 === "6.72") {
             result = "PlayStation 4 v" + versionPS4 + " - Jailbreak (PS4JB Exploit)";
         } else if (versionPS4 === "9.00") {
-            result = "PlayStation 4 v" + versionPS4 + " - Jailbreak (PPPwn/pOObs4)";
-        } else if ([
-            "7.00", "7.01", "7.02", "7.50", "7.51", "7.55",
-            "8.00", "8.01", "8.03", "8.50", "8.52",
-            "9.03", "9.04", "9.50", "9.51", "9.60",
-            "10.00", "10.01", "10.50", "10.70", "10.71", "11.00"
-        ].includes(versionPS4)) {
+            result = "PlayStation 4 v" + versionPS4 + " - Jailbreak (PPPwn/PSFree/pOObs4/Lapse)";
+        } else if (parseFloat(versionPS4) >= 7.00 && parseFloat(versionPS4) <= 9.60) {
+            result = "PlayStation 4 v" + versionPS4 + " - Jailbreak (PSFree/Lapse/PPPwn)";
+        } else if (parseFloat(versionPS4) >= 10.00 && parseFloat(versionPS4) <= 11.00) {
             result = "PlayStation 4 v" + versionPS4 + " - Jailbreak (PPPwn)";
-        } else if (parseFloat(versionPS4) > 11.00) {
+        } else if (parseFloat(versionPS4) >= 11.02 && parseFloat(versionPS4) <= 12.02) {
+            result = "PlayStation 4 v" + versionPS4 + " - Jailbreak (Lua/Lapse)";
+        } else if (parseFloat(versionPS4) > 12.02) {
             result = "PlayStation 4 v" + versionPS4 + " - No Jailbreak";
         } else if (parseFloat(versionPS4) < 5.05) {
             result = "PlayStation 4 v" + versionPS4 + " - Jailbreak Disponible";
@@ -83,6 +82,8 @@ function tph_resetSettings() {
     localStorage.removeItem("tph_customTitleHTML"); 
     localStorage.removeItem("tph_whiteBackground");  
     localStorage.removeItem("tph_filterUserAgent");
+    localStorage.removeItem("tph_font_index");     
+    localStorage.removeItem("tph_font_settings");   
     localStorage.removeItem("currentBackgroundTemp");
 
     alert("✅ Todos los ajustes han sido restablecidos.");
@@ -97,7 +98,9 @@ function tph_exportJSON() {
         'tph_customTitle',
         'tph_customTitleHTML',
         'tph_filterUserAgent',
-        'tph_whiteBackground'
+        'tph_whiteBackground',
+        'tph_font_index',     
+        'tph_font_settings' 
     ];
     const localStorageData = {};
 
@@ -144,7 +147,7 @@ function tph_importJSON() {
                             }
                         }
                         alert("✅ Se ha importado la configuracion JSON con exito.");
-                         location.reload()
+                        location.reload();
                     } else {
                         alert("❌ La configuracion JSON no es valida.");
                     }
@@ -174,7 +177,7 @@ function tph_importJSON() {
                                 }
                             }
                             alert("✅ Se ha importado la configuracion JSON con exito.");
-                            location.reload()
+                            location.reload();
                         } else {
                             alert("❌ La configuracion JSON no es valida.");
                         }

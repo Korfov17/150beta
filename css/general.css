@@ -1,0 +1,662 @@
+/* === FUENTES === */
+@font-face {
+  font-family: 'Pricedown'; 
+  src: url('../web-fonts/Pricedown.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'GodOfWar';
+  src: url('../web-fonts/GODOFWAR.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Akira_Expanded_Demo';
+  src: url('../web-fonts/Akira_Expanded_Demo.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Ethnocentri_Rg';
+  src: url('../web-fonts/Ethnocentri_Rg.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Ethnocentri_Rg_It';
+  src: url('../web-fonts/Ethnocentri_Rg_It.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lemon_Tuesday';
+  src: url('../web-fonts/Lemon_Tuesday.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MinecraftFifty-Solid';
+  src: url('../web-fonts/MinecraftFifty-Solid.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Minecrafter_Alt';
+  src: url('../web-fonts/Minecrafter.Alt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Minecrafter_Reg';
+  src: url('../web-fonts/Minecrafter.Reg.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pokemon_Hollow';
+  src: url('../web-fonts/Pokemon_Hollow.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pokemon_Solid';
+  src: url('../web-fonts/Pokemon_Solid.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pricedown';
+  src: url('../web-fonts/Pricedown.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Road_Rage';
+  src: url('../web-fonts/Road_Rage.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Rumble_Strike';
+  src: url('../web-fonts/Rumble_Strike.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SignPainterHouseScript';
+  src: url('../web-fonts/SignPainterHouseScript.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'VCR_OSD_MONO_1_001';
+  src: url('../web-fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Vampire_Wars';
+  src: url('../web-fonts/Vampire_Wars.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Vampire_Wars_Italic';
+  src: url('../web-fonts/Vampire_Wars_Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'chinese_rocks_rg';
+  src: url('../web-fonts/chinese_rocks_rg.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'minecraft_10';
+  src: url('../web-fonts/minecraft_10.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'minecraft_font';
+  src: url('../web-fonts/minecraft_font.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MODERNE';
+  src: url('MODERNE%20SANS.eot');
+  src: local('MODERNE Regular'), local('MODERNE SANS'),
+       url('MODERNE%20SANSd41d.eot?#iefix') format('embedded-opentype'),
+       url('MODERNE%20SANS.woff2') format('woff2'),
+       url('MODERNE%20SANS.woff') format('woff'),
+       url('MODERNE%20SANS.ttf') format('truetype'),
+       url('MODERNE%20SANS.svg#MODERNE') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* === GENERALES === */
+body {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  background-image: url('background/default.jpg');
+  font-family: 'MODERNE', monospace;
+}
+
+/* === TEXTOS GENERALES === */
+h1 {
+  font-size: 10rem;
+  color: #FFFFFF;
+  margin: 5px;
+  text-shadow: 1px 1px 10px #777;
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: 'Pricedown', sans-serif;
+  color: #FFFFFF;
+  margin: 10px;
+  text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  margin: 10px;
+  text-shadow: 1px 1px 2px #777;
+}
+
+h4 {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  margin: 10px;
+  text-shadow: 1px 1px 2px #777;
+}
+
+main {
+  margin-top: 30px;
+}
+
+/* === ESTILOS DE INDEX === */
+
+.classname, .classname1 {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 27px; 
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 3px solid #FFFFFF;
+  border-radius: 8px; 
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #9c9c9c;
+  transition: background-color 0.3s, color 0.3s;
+  width: 450px; 
+  height: 50px; 
+  line-height: 50px;
+  margin-bottom: 13px;
+}
+
+.classname:hover, .classname1:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.classname:active, .classname1:active {
+  position: relative;
+  top: 1px;
+}
+
+.large-button-container {
+  display: inline-block;
+}
+
+.small-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.small-button {
+  display: inline-block;
+  padding: 12px 30px; 
+  font-size: 22px; 
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 3px solid #FFFFFF;
+  border-radius: 8px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #9c9c9c;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.small-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.small-button:active {
+  position: relative;
+  top: 1px;
+}
+
+i[class^="fa-"],
+i[class*=" fa-"] {
+  font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+  font-style: normal;
+}
+
+/* === ESTILOS DE SETTINGS === */
+.contenedor-transparente {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 700px;
+}
+
+.contenedor-transparente select {
+  margin: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(3px);
+}
+
+.contenedor-transparente select option {
+  background-color: #333;
+  color: white;
+}
+
+.select-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.select-contenedor select {
+  flex: 1 1 calc(33.333% - 30px);
+  max-width: calc(33.333% - 30px);
+}
+
+.boton {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(3px);
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.botones-contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* === FUENTES DINÁMICAS === */
+
+/* Fuente 1 */
+.tph_font1-h2 h2 {
+  font-family: 'GodOfWar', serif;
+}
+
+.tph_font1-h3h4 h3,
+.tph_font1-h3h4 h4 {
+  font-family: 'GodOfWar', serif;
+}
+
+.tph_font1-buttons .botones-contenedor *,
+.tph_font1-buttons .select-contenedor *,
+.tph_font1-buttons .large-button-container *,
+.tph_font1-buttons .small-button-container * {
+  font-family: 'GodOfWar', serif;
+}
+
+/* Fuente 2 */
+.tph_font2-h2 h2 {
+  font-family: 'Akira_Expanded_Demo', serif;
+}
+
+.tph_font2-h3h4 h3,
+.tph_font2-h3h4 h4 {
+  font-family: 'Akira_Expanded_Demo', serif;
+}
+
+.tph_font2-buttons .botones-contenedor *,
+.tph_font2-buttons .select-contenedor *,
+.tph_font2-buttons .large-button-container *,
+.tph_font2-buttons .small-button-container * {
+  font-family: 'Akira_Expanded_Demo', serif;
+}
+
+/* Fuente 3 */
+.tph_font3-h2 h2 {
+  font-family: 'Ethnocentri_Rg', serif;
+}
+
+.tph_font3-h3h4 h3,
+.tph_font3-h3h4 h4 {
+  font-family: 'Ethnocentri_Rg', serif;
+}
+
+.tph_font3-buttons .botones-contenedor *,
+.tph_font3-buttons .select-contenedor *,
+.tph_font3-buttons .large-button-container *,
+.tph_font3-buttons .small-button-container * {
+  font-family: 'Ethnocentri_Rg', serif;
+}
+
+/* Fuente 4 */
+.tph_font4-h2 h2 {
+  font-family: 'Ethnocentri_Rg_It', serif;
+}
+
+.tph_font4-h3h4 h3,
+.tph_font4-h3h4 h4 {
+  font-family: 'Ethnocentri_Rg_It', serif;
+}
+
+.tph_font4-buttons .botones-contenedor *,
+.tph_font4-buttons .select-contenedor *,
+.tph_font4-buttons .large-button-container *,
+.tph_font4-buttons .small-button-container * {
+  font-family: 'Ethnocentri_Rg_It', serif;
+}
+
+/* Fuente 5 */
+.tph_font5-h2 h2 {
+  font-family: 'Lemon_Tuesday', serif;
+}
+
+.tph_font5-h3h4 h3,
+.tph_font5-h3h4 h4 {
+  font-family: 'Lemon_Tuesday', serif;
+}
+
+.tph_font5-buttons .botones-contenedor *,
+.tph_font5-buttons .select-contenedor *,
+.tph_font5-buttons .large-button-container *,
+.tph_font5-buttons .small-button-container * {
+  font-family: 'Lemon_Tuesday', serif;
+}
+
+/* Fuente 6 */
+.tph_font6-h2 h2 {
+  font-family: 'MinecraftFifty-Solid', serif;
+}
+
+.tph_font6-h3h4 h3,
+.tph_font6-h3h4 h4 {
+  font-family: 'MinecraftFifty-Solid', serif;
+}
+
+.tph_font6-buttons .botones-contenedor *,
+.tph_font6-buttons .select-contenedor *,
+.tph_font6-buttons .large-button-container *,
+.tph_font6-buttons .small-button-container * {
+  font-family: 'MinecraftFifty-Solid', serif;
+}
+
+/* Fuente 7 */
+.tph_font7-h2 h2 {
+  font-family: 'Minecrafter_Alt', serif;
+}
+
+.tph_font7-h3h4 h3,
+.tph_font7-h3h4 h4 {
+  font-family: 'Minecrafter_Alt', serif;
+}
+
+.tph_font7-buttons .botones-contenedor *,
+.tph_font7-buttons .select-contenedor *,
+.tph_font7-buttons .large-button-container *,
+.tph_font7-buttons .small-button-container * {
+  font-family: 'Minecrafter_Alt', serif;
+}
+
+/* Fuente 8 */
+.tph_font8-h2 h2 {
+  font-family: 'Minecrafter_Reg', serif;
+}
+
+.tph_font8-h3h4 h3,
+.tph_font8-h3h4 h4 {
+  font-family: 'Minecrafter_Reg', serif;
+}
+
+.tph_font8-buttons .botones-contenedor *,
+.tph_font8-buttons .select-contenedor *,
+.tph_font8-buttons .large-button-container *,
+.tph_font8-buttons .small-button-container * {
+  font-family: 'Minecrafter_Reg', serif;
+}
+
+/* Fuente 9 */
+.tph_font9-h2 h2 {
+  font-family: 'Pokemon_Hollow', serif;
+}
+
+.tph_font9-h3h4 h3,
+.tph_font9-h3h4 h4 {
+  font-family: 'Pokemon_Hollow', serif;
+}
+
+.tph_font9-buttons .botones-contenedor *,
+.tph_font9-buttons .select-contenedor *,
+.tph_font9-buttons .large-button-container *,
+.tph_font9-buttons .small-button-container * {
+  font-family: 'Pokemon_Hollow', serif;
+}
+
+/* Fuente 10 */
+.tph_font10-h2 h2 {
+  font-family: 'Pokemon_Solid', serif;
+}
+
+.tph_font10-h3h4 h3,
+.tph_font10-h3h4 h4 {
+  font-family: 'Pokemon_Solid', serif;
+}
+
+.tph_font10-buttons .botones-contenedor *,
+.tph_font10-buttons .select-contenedor *,
+.tph_font10-buttons .large-button-container *,
+.tph_font10-buttons .small-button-container * {
+  font-family: 'Pokemon_Solid', serif;
+}
+
+/* Fuente 11 */
+.tph_font11-h2 h2 {
+  font-family: 'Pricedown', serif;
+}
+
+.tph_font11-h3h4 h3,
+.tph_font11-h3h4 h4 {
+  font-family: 'Pricedown', serif;
+}
+
+.tph_font11-buttons .botones-contenedor *,
+.tph_font11-buttons .select-contenedor *,
+.tph_font11-buttons .large-button-container *,
+.tph_font11-buttons .small-button-container * {
+  font-family: 'Pricedown', serif;
+}
+
+/* Fuente 12 */
+.tph_font12-h2 h2 {
+  font-family: 'Road_Rage', serif;
+}
+
+.tph_font12-h3h4 h3,
+.tph_font12-h3h4 h4 {
+  font-family: 'Road_Rage', serif;
+}
+
+.tph_font12-buttons .botones-contenedor *,
+.tph_font12-buttons .select-contenedor *,
+.tph_font12-buttons .large-button-container *,
+.tph_font12-buttons .small-button-container * {
+  font-family: 'Road_Rage', serif;
+}
+
+/* Fuente 13 */
+.tph_font13-h2 h2 {
+  font-family: 'Rumble_Strike', serif;
+}
+
+.tph_font13-h3h4 h3,
+.tph_font13-h3h4 h4 {
+  font-family: 'Rumble_Strike', serif;
+}
+
+.tph_font13-buttons .botones-contenedor *,
+.tph_font13-buttons .select-contenedor *,
+.tph_font13-buttons .large-button-container *,
+.tph_font13-buttons .small-button-container * {
+  font-family: 'Rumble_Strike', serif;
+}
+
+/* Fuente 14 */
+.tph_font14-h2 h2 {
+  font-family: 'SignPainterHouseScript', serif;
+}
+
+.tph_font14-h3h4 h3,
+.tph_font14-h3h4 h4 {
+  font-family: 'SignPainterHouseScript', serif;
+}
+
+.tph_font14-buttons .botones-contenedor *,
+.tph_font14-buttons .select-contenedor *,
+.tph_font14-buttons .large-button-container *,
+.tph_font14-buttons .small-button-container * {
+  font-family: 'SignPainterHouseScript', serif;
+}
+
+/* Fuente 15 */
+.tph_font15-h2 h2 {
+  font-family: 'VCR_OSD_MONO_1_001', serif;
+}
+
+.tph_font15-h3h4 h3,
+.tph_font15-h3h4 h4 {
+  font-family: 'VCR_OSD_MONO_1_001', serif;
+}
+
+.tph_font15-buttons .botones-contenedor *,
+.tph_font15-buttons .select-contenedor *,
+.tph_font15-buttons .large-button-container *,
+.tph_font15-buttons .small-button-container * {
+  font-family: 'VCR_OSD_MONO_1_001', serif;
+}
+
+/* Fuente 16 */
+.tph_font16-h2 h2 {
+  font-family: 'Vampire_Wars', serif;
+}
+
+.tph_font16-h3h4 h3,
+.tph_font16-h3h4 h4 {
+  font-family: 'Vampire_Wars', serif;
+}
+
+.tph_font16-buttons .botones-contenedor *,
+.tph_font16-buttons .select-contenedor *,
+.tph_font16-buttons .large-button-container *,
+.tph_font16-buttons .small-button-container * {
+  font-family: 'Vampire_Wars', serif;
+}
+
+/* Fuente 17 */
+.tph_font17-h2 h2 {
+  font-family: 'Vampire_Wars_Italic', serif;
+}
+
+.tph_font17-h3h4 h3,
+.tph_font17-h3h4 h4 {
+  font-family: 'Vampire_Wars_Italic', serif;
+}
+
+.tph_font17-buttons .botones-contenedor *,
+.tph_font17-buttons .select-contenedor *,
+.tph_font17-buttons .large-button-container *,
+.tph_font17-buttons .small-button-container * {
+  font-family: 'Vampire_Wars_Italic', serif;
+}
+
+/* Fuente 18 */
+.tph_font18-h2 h2 {
+  font-family: 'chinese_rocks_rg', serif;
+}
+
+.tph_font18-h3h4 h3,
+.tph_font18-h3h4 h4 {
+  font-family: 'chinese_rocks_rg', serif;
+}
+
+.tph_font18-buttons .botones-contenedor *,
+.tph_font18-buttons .select-contenedor *,
+.tph_font18-buttons .large-button-container *,
+.tph_font18-buttons .small-button-container * {
+  font-family: 'chinese_rocks_rg', serif;
+}
+
+/* Fuente 19 */
+.tph_font19-h2 h2 {
+  font-family: 'minecraft_10', serif;
+}
+
+.tph_font19-h3h4 h3,
+.tph_font19-h3h4 h4 {
+  font-family: 'minecraft_10', serif;
+}
+
+.tph_font19-buttons .botones-contenedor *,
+.tph_font19-buttons .select-contenedor *,
+.tph_font19-buttons .large-button-container *,
+.tph_font19-buttons .small-button-container * {
+  font-family: 'minecraft_10', serif;
+}
+
+/* Fuente 20 */
+.tph_font20-h2 h2 {
+  font-family: 'minecraft_font', serif;
+}
+
+.tph_font20-h3h4 h3,
+.tph_font20-h3h4 h4 {
+  font-family: 'minecraft_font', serif;
+}
+
+.tph_font20-buttons .botones-contenedor *,
+.tph_font20-buttons .select-contenedor *,
+.tph_font20-buttons .large-button-container *,
+.tph_font20-buttons .small-button-container * {
+  font-family: 'minecraft_font', serif;
+}
+
+/* === ANIMACIONES === */
+@keyframes arcoiris {
+  0% { color: red; }
+  16.6% { color: orange; }
+  33.3% { color: yellow; }
+  50% { color: green; }
+  66.6% { color: blue; }
+  83.3% { color: indigo; }
+  100% { color: red; }
+}
+
+.arcoiris {
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  animation: arcoiris 18s linear infinite;
+}
+
+/* === FILTRO EXTRA (Index) === */
+#filterUserAgent {
+  margin: 12px;
+}

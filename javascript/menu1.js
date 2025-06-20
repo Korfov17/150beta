@@ -34,7 +34,7 @@ function initSettingsMenu1() {
           "tph_filterUserAgent",
           estadoActual === "hidden" ? "visible" : "hidden"
         );
-        alert("✅ Estado de filtro alternado.");
+        alert("✅ Mostrar/Ocultar alternado.");
         break;
 
       case "infoAlert":
