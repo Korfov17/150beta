@@ -15,8 +15,8 @@
 }
 
 @font-face {
-  font-family: 'Ethnocentri_Rg';
-  src: url('../web-fonts/Ethnocentri_Rg.otf') format('opentype');
+  font-family: 'Transformer';
+  src: url('../web-fonts/Transformer.ttf') format('opentype');
 }
 
 @font-face {
@@ -25,8 +25,8 @@
 }
 
 @font-face {
-  font-family: 'Lemon_Tuesday';
-  src: url('../web-fonts/Lemon_Tuesday.otf') format('opentype');
+  font-family: 'old_stamper';
+  src: url('../web-fonts/old_stamper.ttf') format('opentype');
 }
 
 @font-face {
@@ -35,8 +35,8 @@
 }
 
 @font-face {
-  font-family: 'Minecrafter_Alt';
-  src: url('../web-fonts/Minecrafter.Alt.ttf') format('truetype');
+  font-family: 'go3v2';
+  src: url('../web-fonts/go3v2.ttf') format('truetype');
 }
 
 @font-face {
@@ -65,8 +65,8 @@
 }
 
 @font-face {
-  font-family: 'Rumble_Strike';
-  src: url('../web-fonts/Rumble_Strike.otf') format('opentype');
+  font-family: 'Kirsty_Bd_It';
+  src: url('../web-fonts/Kirsty_Bd_It.otf') format('opentype');
 }
 
 @font-face {
@@ -75,13 +75,13 @@
 }
 
 @font-face {
-  font-family: 'VCR_OSD_MONO_1_001';
-  src: url('../web-fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+  font-family: 'Pixelcraft';
+  src: url('../web-fonts/Pixelcraft.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Vampire_Wars';
-  src: url('../web-fonts/Vampire_Wars.otf') format('opentype');
+  font-family: 'GBShinto-Regular';
+  src: url('../web-fonts/GBShinto-Regular.otf') format('opentype');
 }
 
 @font-face {
@@ -95,13 +95,19 @@
 }
 
 @font-face {
-  font-family: 'minecraft_10';
-  src: url('../web-fonts/minecraft_10.ttf') format('truetype');
+  font-family: 'zrnic_rg';
+  src: url('../web-fonts/zrnic_rg.otf') format('truetype');
 }
 
 @font-face {
-  font-family: 'minecraft_font';
-  src: url('../web-fonts/minecraft_font.ttf') format('truetype');
+  font-family: 'HARRYP';
+  src: url('../web-fonts/HARRYP.TTF') format('truetype');
+}
+
+/* EXTRA/DEFAULT */
+@font-face {
+  font-family: 'Robofan-Symbol';
+  src: url('../web-fonts/Robofan-Symbol.otf') format('truetype');
 }
 
 @font-face {
@@ -236,7 +242,7 @@ i[class*=" fa-"] {
 .contenedor-transparente {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 15px;
-  padding: 30px;
+  padding: 34px;
   margin: 20px auto;
   width: 80%;
   max-width: 700px;
@@ -296,6 +302,11 @@ i[class*=" fa-"] {
   flex-wrap: wrap;
 }
 
+.robofan-icon {
+  font-family: 'Robofan-Symbol';
+  font-size: 1.3em;
+}
+
 /* === FUENTES DINÁMICAS === */
 
 /* Fuente 1 */
@@ -334,19 +345,25 @@ i[class*=" fa-"] {
 
 /* Fuente 3 */
 .tph_font3-h2 h2 {
-  font-family: 'Ethnocentri_Rg', serif;
+  font-family: 'Transformer', serif;
 }
 
 .tph_font3-h3h4 h3,
 .tph_font3-h3h4 h4 {
-  font-family: 'Ethnocentri_Rg', serif;
+  font-family: 'Transformer', serif;
 }
 
 .tph_font3-buttons .botones-contenedor *,
 .tph_font3-buttons .select-contenedor *,
 .tph_font3-buttons .large-button-container *,
 .tph_font3-buttons .small-button-container * {
-  font-family: 'Ethnocentri_Rg', serif;
+  font-family: 'Transformer', serif;
+}
+
+.robofan-icon {
+  font-family: 'Robofan-Symbol', sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
 }
 
 /* Fuente 4 */
@@ -368,19 +385,19 @@ i[class*=" fa-"] {
 
 /* Fuente 5 */
 .tph_font5-h2 h2 {
-  font-family: 'Lemon_Tuesday', serif;
+  font-family: 'old_stamper', serif;
 }
 
 .tph_font5-h3h4 h3,
 .tph_font5-h3h4 h4 {
-  font-family: 'Lemon_Tuesday', serif;
+  font-family: 'old_stamper', serif;
 }
 
 .tph_font5-buttons .botones-contenedor *,
 .tph_font5-buttons .select-contenedor *,
 .tph_font5-buttons .large-button-container *,
 .tph_font5-buttons .small-button-container * {
-  font-family: 'Lemon_Tuesday', serif;
+  font-family: 'old_stamper', serif;
 }
 
 /* Fuente 6 */
@@ -402,19 +419,19 @@ i[class*=" fa-"] {
 
 /* Fuente 7 */
 .tph_font7-h2 h2 {
-  font-family: 'Minecrafter_Alt', serif;
+  font-family: 'go3v2', serif;
 }
 
 .tph_font7-h3h4 h3,
 .tph_font7-h3h4 h4 {
-  font-family: 'Minecrafter_Alt', serif;
+  font-family: 'go3v2', serif;
 }
 
 .tph_font7-buttons .botones-contenedor *,
 .tph_font7-buttons .select-contenedor *,
 .tph_font7-buttons .large-button-container *,
 .tph_font7-buttons .small-button-container * {
-  font-family: 'Minecrafter_Alt', serif;
+  font-family: 'go3v2', serif;
 }
 
 /* Fuente 8 */
@@ -504,19 +521,19 @@ i[class*=" fa-"] {
 
 /* Fuente 13 */
 .tph_font13-h2 h2 {
-  font-family: 'Rumble_Strike', serif;
+  font-family: 'Kirsty_Bd_It', serif;
 }
 
 .tph_font13-h3h4 h3,
 .tph_font13-h3h4 h4 {
-  font-family: 'Rumble_Strike', serif;
+  font-family: 'Kirsty_Bd_It', serif;
 }
 
 .tph_font13-buttons .botones-contenedor *,
 .tph_font13-buttons .select-contenedor *,
 .tph_font13-buttons .large-button-container *,
 .tph_font13-buttons .small-button-container * {
-  font-family: 'Rumble_Strike', serif;
+  font-family: 'Kirsty_Bd_It', serif;
 }
 
 /* Fuente 14 */
@@ -538,36 +555,36 @@ i[class*=" fa-"] {
 
 /* Fuente 15 */
 .tph_font15-h2 h2 {
-  font-family: 'VCR_OSD_MONO_1_001', serif;
+  font-family: 'Pixelcraft', serif;
 }
 
 .tph_font15-h3h4 h3,
 .tph_font15-h3h4 h4 {
-  font-family: 'VCR_OSD_MONO_1_001', serif;
+  font-family: 'Pixelcraft', serif;
 }
 
 .tph_font15-buttons .botones-contenedor *,
 .tph_font15-buttons .select-contenedor *,
 .tph_font15-buttons .large-button-container *,
 .tph_font15-buttons .small-button-container * {
-  font-family: 'VCR_OSD_MONO_1_001', serif;
+  font-family: 'Pixelcraft', serif;
 }
 
 /* Fuente 16 */
 .tph_font16-h2 h2 {
-  font-family: 'Vampire_Wars', serif;
+  font-family: 'GBShinto-Regular', serif;
 }
 
 .tph_font16-h3h4 h3,
 .tph_font16-h3h4 h4 {
-  font-family: 'Vampire_Wars', serif;
+  font-family: 'GBShinto-Regular', serif;
 }
 
 .tph_font16-buttons .botones-contenedor *,
 .tph_font16-buttons .select-contenedor *,
 .tph_font16-buttons .large-button-container *,
 .tph_font16-buttons .small-button-container * {
-  font-family: 'Vampire_Wars', serif;
+  font-family: 'GBShinto-Regular', serif;
 }
 
 /* Fuente 17 */
@@ -606,36 +623,36 @@ i[class*=" fa-"] {
 
 /* Fuente 19 */
 .tph_font19-h2 h2 {
-  font-family: 'minecraft_10', serif;
+  font-family: 'HARRYP', serif;
 }
 
 .tph_font19-h3h4 h3,
 .tph_font19-h3h4 h4 {
-  font-family: 'minecraft_10', serif;
+  font-family: 'HARRYP', serif;
 }
 
 .tph_font19-buttons .botones-contenedor *,
 .tph_font19-buttons .select-contenedor *,
 .tph_font19-buttons .large-button-container *,
 .tph_font19-buttons .small-button-container * {
-  font-family: 'minecraft_10', serif;
+  font-family: 'HARRYP', serif;
 }
 
 /* Fuente 20 */
 .tph_font20-h2 h2 {
-  font-family: 'minecraft_font', serif;
+  font-family: 'zrnic_rg', serif;
 }
 
 .tph_font20-h3h4 h3,
 .tph_font20-h3h4 h4 {
-  font-family: 'minecraft_font', serif;
+  font-family: 'zrnic_rg', serif;
 }
 
 .tph_font20-buttons .botones-contenedor *,
 .tph_font20-buttons .select-contenedor *,
 .tph_font20-buttons .large-button-container *,
 .tph_font20-buttons .small-button-container * {
-  font-family: 'minecraft_font', serif;
+  font-family: 'zrnic_rg', serif;
 }
 
 /* === ANIMACIONES === */
@@ -660,3 +677,114 @@ i[class*=" fa-"] {
 #filterUserAgent {
   margin: 12px;
 }
+
+/* Cache PS4 */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1d1d1d; 
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#loading-content {
+  text-align: center;
+  width: 80%;
+}
+
+#progress-container {
+  width: 100%;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin: 5px 0;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); 
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ffffff 0%, #f0f8ff 100%); 
+  transition: width 0.1s linear;
+  position: relative;
+}
+
+#progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#progress-text {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  color: #fff; 
+}
+
+.hidden {
+  display: none !important;
+}
+
+.reload-message {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 21.6px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px 43px;
+  border-radius: 0;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto 5px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+    .reload-message::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 3px;
+      background: linear-gradient(270deg, red, orange, yellow, lime, cyan, blue, violet, red);
+      background-size: 400% 400%;
+      border-radius: inherit;
+      z-index: -1;
+      animation: rainbow-border 7s linear infinite;
+      mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+    }
+
+    @keyframes rainbow-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.7; text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+      50% { opacity: 1; text-shadow: 0 0 15px rgba(255,255,255,0.8); }
+      100% { opacity: 0.7; text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    }

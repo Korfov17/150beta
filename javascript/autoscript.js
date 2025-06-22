@@ -71,7 +71,60 @@ function detect_device() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", detect_device);
+function ps4_cache_screen() {
+  const loadingScreen = document.getElementById('loading-screen');
+  const mainContent = document.getElementById('main-content');
+  const appCache = window.applicationCache;
+  const cacheAlreadyDone = localStorage.getItem('ps4CacheDone');
+  const isPS4 = /PlayStation 4|Mozilla\/5.0 \(PlayStation 4/i.test(navigator.userAgent);
+
+  if (isPS4 && !cacheAlreadyDone && appCache.status !== appCache.UNCACHED) {
+    loadingScreen.innerHTML = `
+      <div id="loading-content">
+        <div id="progress-text">Preparando caché...</div>
+        <div id="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+      </div>
+    `;
+    loadingScreen.style.display = 'flex';
+    mainContent.classList.add('hidden');
+
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+
+    appCache.addEventListener('progress', function (e) {
+      if (e.lengthComputable) {
+        const percent = Math.round((e.loaded / e.total) * 100);
+        progressBar.style.width = percent + '%';
+        progressText.textContent = `Instalando Caché Offline... ${percent}%`;
+      }
+    });
+
+    appCache.addEventListener('cached', function () {
+      progressText.innerHTML = '<div class="reload-message">¡Listo! Abre de nuevo el navegador</div>';
+      progressBar.style.width = '100%';
+      localStorage.setItem('ps4CacheDone', 'true');
+    });
+
+    appCache.addEventListener('error', function () {
+      progressText.innerHTML = '<div class="reload-message">Error al instalar la caché. Vuelve a intentarlo</div>';
+    });
+
+    if (appCache.status === appCache.DOWNLOADING) {
+      progressText.textContent = 'Preparando caché... 0%';
+      progressBar.style.width = '0%';
+    }
+  } else {
+    loadingScreen.style.display = 'none';
+    mainContent.classList.remove('hidden');
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  detect_device();
+  ps4_cache_screen();
+});
 
 function tph_resetSettings() {
   const confirmar = confirm("¿Estás seguro de que quieres restablecer todos los ajustes?");
@@ -83,7 +136,9 @@ function tph_resetSettings() {
     localStorage.removeItem("tph_whiteBackground");  
     localStorage.removeItem("tph_filterUserAgent");
     localStorage.removeItem("tph_font_index");     
-    localStorage.removeItem("tph_font_settings");   
+    localStorage.removeItem("tph_font_settings");
+    localStorage.removeItem("tph_robofan_symbols_enabled"); 
+    localStorage.removeItem("tph_robofan_symbol_selected");
     localStorage.removeItem("currentBackgroundTemp");
 
     alert("✅ Todos los ajustes han sido restablecidos.");
@@ -100,7 +155,9 @@ function tph_exportJSON() {
         'tph_filterUserAgent',
         'tph_whiteBackground',
         'tph_font_index',     
-        'tph_font_settings' 
+        'tph_font_settings',
+        'tph_robofan_symbols_enabled',
+        'tph_robofan_symbol_selected' 
     ];
     const localStorageData = {};
 
@@ -113,7 +170,7 @@ function tph_exportJSON() {
 
     const finalData = {
         "TU PS4 HEN CONFIG JSON": {
-            "version_json": "v1.0.0",
+            "version_json": "v1.0.2",
             ...localStorageData
         }
     };
