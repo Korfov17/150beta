@@ -171,7 +171,7 @@ main {
 
 /* === ESTILOS DE INDEX === */
 
-.classname, .classname1 {
+.url00, .url01 {
   display: inline-block;
   padding: 12px 25px;
   font-size: 27px; 
@@ -189,27 +189,27 @@ main {
   margin-bottom: 13px;
 }
 
-.classname:hover, .classname1:hover {
+.url00:hover, .url01:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.classname:active, .classname1:active {
+.url00:active, .url01:active {
   position: relative;
   top: 1px;
 }
 
-.large-button-container {
+.url-container2 {
   display: inline-block;
 }
 
-.small-button-container {
+.url-container {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.small-button {
+.url-button {
   display: inline-block;
   padding: 12px 30px; 
   font-size: 22px; 
@@ -223,11 +223,11 @@ main {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.small-button:hover {
+.url-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.small-button:active {
+.url-button:active {
   position: relative;
   top: 1px;
 }
@@ -239,7 +239,7 @@ i[class*=" fa-"] {
 }
 
 /* === ESTILOS DE SETTINGS === */
-.contenedor-transparente {
+.settings-container {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 15px;
   padding: 34px;
@@ -248,7 +248,7 @@ i[class*=" fa-"] {
   max-width: 700px;
 }
 
-.contenedor-transparente select {
+.settings-container select {
   margin: 10px;
   padding: 10px;
   font-size: 1rem;
@@ -261,24 +261,24 @@ i[class*=" fa-"] {
   backdrop-filter: blur(3px);
 }
 
-.contenedor-transparente select option {
+.settings-container select option {
   background-color: #333;
   color: white;
 }
 
-.select-contenedor {
+.select-menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
 }
 
-.select-contenedor select {
+.select-menu select {
   flex: 1 1 calc(33.333% - 30px);
   max-width: calc(33.333% - 30px);
 }
 
-.boton {
+.button00 {
   margin-top: 20px;
   padding: 12px 30px;
   font-size: 1rem;
@@ -291,20 +291,15 @@ i[class*=" fa-"] {
   transition: background-color 0.3s ease;
 }
 
-.boton:hover {
+.button00:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.botones-contenedor {
+.settings-button {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-}
-
-.robofan-icon {
-  font-family: 'Robofan-Symbol';
-  font-size: 1.3em;
 }
 
 /* === FUENTES DINÁMICAS === */
@@ -319,10 +314,10 @@ i[class*=" fa-"] {
   font-family: 'GodOfWar', serif;
 }
 
-.tph_font1-buttons .botones-contenedor *,
-.tph_font1-buttons .select-contenedor *,
-.tph_font1-buttons .large-button-container *,
-.tph_font1-buttons .small-button-container * {
+.tph_font1-buttons .settings-container *,
+.tph_font1-buttons .select-menu *,
+.tph_font1-buttons .url-container2 *,
+.tph_font1-buttons .url-container * {
   font-family: 'GodOfWar', serif;
 }
 
@@ -336,10 +331,10 @@ i[class*=" fa-"] {
   font-family: 'Akira_Expanded_Demo', serif;
 }
 
-.tph_font2-buttons .botones-contenedor *,
-.tph_font2-buttons .select-contenedor *,
-.tph_font2-buttons .large-button-container *,
-.tph_font2-buttons .small-button-container * {
+.tph_font2-buttons .settings-container *,
+.tph_font2-buttons .select-menu *,
+.tph_font2-buttons .url-container2 *,
+.tph_font2-buttons .url-container * {
   font-family: 'Akira_Expanded_Demo', serif;
 }
 
@@ -353,16 +348,17 @@ i[class*=" fa-"] {
   font-family: 'Transformer', serif;
 }
 
-.tph_font3-buttons .botones-contenedor *,
-.tph_font3-buttons .select-contenedor *,
-.tph_font3-buttons .large-button-container *,
-.tph_font3-buttons .small-button-container * {
+.tph_font3-buttons .settings-container *,
+.tph_font3-buttons .select-menu *,
+.tph_font3-buttons .url-container2 *,
+.tph_font3-buttons .url-container * {
   font-family: 'Transformer', serif;
 }
 
 .robofan-icon {
   font-family: 'Robofan-Symbol', sans-serif !important;
-  font-style: normal;
+  font-style: normal;  
+  font-size: 1.3em;
   font-weight: normal;
 }
 
@@ -376,10 +372,10 @@ i[class*=" fa-"] {
   font-family: 'Ethnocentri_Rg_It', serif;
 }
 
-.tph_font4-buttons .botones-contenedor *,
-.tph_font4-buttons .select-contenedor *,
-.tph_font4-buttons .large-button-container *,
-.tph_font4-buttons .small-button-container * {
+.tph_font4-buttons .settings-container *,
+.tph_font4-buttons .select-menu *,
+.tph_font4-buttons .url-container2 *,
+.tph_font4-buttons .url-container * {
   font-family: 'Ethnocentri_Rg_It', serif;
 }
 
@@ -393,10 +389,10 @@ i[class*=" fa-"] {
   font-family: 'old_stamper', serif;
 }
 
-.tph_font5-buttons .botones-contenedor *,
-.tph_font5-buttons .select-contenedor *,
-.tph_font5-buttons .large-button-container *,
-.tph_font5-buttons .small-button-container * {
+.tph_font5-buttons .settings-container *,
+.tph_font5-buttons .select-menu *,
+.tph_font5-buttons .url-container2 *,
+.tph_font5-buttons .url-container * {
   font-family: 'old_stamper', serif;
 }
 
@@ -410,10 +406,10 @@ i[class*=" fa-"] {
   font-family: 'MinecraftFifty-Solid', serif;
 }
 
-.tph_font6-buttons .botones-contenedor *,
-.tph_font6-buttons .select-contenedor *,
-.tph_font6-buttons .large-button-container *,
-.tph_font6-buttons .small-button-container * {
+.tph_font6-buttons .settings-container *,
+.tph_font6-buttons .select-menu *,
+.tph_font6-buttons .url-container2 *,
+.tph_font6-buttons .url-container * {
   font-family: 'MinecraftFifty-Solid', serif;
 }
 
@@ -427,10 +423,10 @@ i[class*=" fa-"] {
   font-family: 'go3v2', serif;
 }
 
-.tph_font7-buttons .botones-contenedor *,
-.tph_font7-buttons .select-contenedor *,
-.tph_font7-buttons .large-button-container *,
-.tph_font7-buttons .small-button-container * {
+.tph_font7-buttons .settings-container *,
+.tph_font7-buttons .select-menu *,
+.tph_font7-buttons .url-container2 *,
+.tph_font7-buttons .url-container * {
   font-family: 'go3v2', serif;
 }
 
@@ -444,10 +440,10 @@ i[class*=" fa-"] {
   font-family: 'Minecrafter_Reg', serif;
 }
 
-.tph_font8-buttons .botones-contenedor *,
-.tph_font8-buttons .select-contenedor *,
-.tph_font8-buttons .large-button-container *,
-.tph_font8-buttons .small-button-container * {
+.tph_font8-buttons .settings-container *,
+.tph_font8-buttons .select-menu *,
+.tph_font8-buttons .url-container2 *,
+.tph_font8-buttons .url-container * {
   font-family: 'Minecrafter_Reg', serif;
 }
 
@@ -461,10 +457,10 @@ i[class*=" fa-"] {
   font-family: 'Pokemon_Hollow', serif;
 }
 
-.tph_font9-buttons .botones-contenedor *,
-.tph_font9-buttons .select-contenedor *,
-.tph_font9-buttons .large-button-container *,
-.tph_font9-buttons .small-button-container * {
+.tph_font9-buttons .settings-container *,
+.tph_font9-buttons .select-menu *,
+.tph_font9-buttons .url-container2 *,
+.tph_font9-buttons .url-container * {
   font-family: 'Pokemon_Hollow', serif;
 }
 
@@ -478,10 +474,10 @@ i[class*=" fa-"] {
   font-family: 'Pokemon_Solid', serif;
 }
 
-.tph_font10-buttons .botones-contenedor *,
-.tph_font10-buttons .select-contenedor *,
-.tph_font10-buttons .large-button-container *,
-.tph_font10-buttons .small-button-container * {
+.tph_font10-buttons .settings-container *,
+.tph_font10-buttons .select-menu *,
+.tph_font10-buttons .url-container2 *,
+.tph_font10-buttons .url-container * {
   font-family: 'Pokemon_Solid', serif;
 }
 
@@ -495,10 +491,10 @@ i[class*=" fa-"] {
   font-family: 'Pricedown', serif;
 }
 
-.tph_font11-buttons .botones-contenedor *,
-.tph_font11-buttons .select-contenedor *,
-.tph_font11-buttons .large-button-container *,
-.tph_font11-buttons .small-button-container * {
+.tph_font11-buttons .settings-container *,
+.tph_font11-buttons .select-menu *,
+.tph_font11-buttons .url-container2 *,
+.tph_font11-buttons .url-container * {
   font-family: 'Pricedown', serif;
 }
 
@@ -512,10 +508,10 @@ i[class*=" fa-"] {
   font-family: 'Road_Rage', serif;
 }
 
-.tph_font12-buttons .botones-contenedor *,
-.tph_font12-buttons .select-contenedor *,
-.tph_font12-buttons .large-button-container *,
-.tph_font12-buttons .small-button-container * {
+.tph_font12-buttons .settings-container *,
+.tph_font12-buttons .select-menu *,
+.tph_font12-buttons .url-container2 *,
+.tph_font12-buttons .url-container * {
   font-family: 'Road_Rage', serif;
 }
 
@@ -529,10 +525,10 @@ i[class*=" fa-"] {
   font-family: 'Kirsty_Bd_It', serif;
 }
 
-.tph_font13-buttons .botones-contenedor *,
-.tph_font13-buttons .select-contenedor *,
-.tph_font13-buttons .large-button-container *,
-.tph_font13-buttons .small-button-container * {
+.tph_font13-buttons .settings-container *,
+.tph_font13-buttons .select-menu *,
+.tph_font13-buttons .url-container2 *,
+.tph_font13-buttons .url-container * {
   font-family: 'Kirsty_Bd_It', serif;
 }
 
@@ -546,10 +542,10 @@ i[class*=" fa-"] {
   font-family: 'SignPainterHouseScript', serif;
 }
 
-.tph_font14-buttons .botones-contenedor *,
-.tph_font14-buttons .select-contenedor *,
-.tph_font14-buttons .large-button-container *,
-.tph_font14-buttons .small-button-container * {
+.tph_font14-buttons .settings-container *,
+.tph_font14-buttons .select-menu *,
+.tph_font14-buttons .url-container2 *,
+.tph_font14-buttons .url-container * {
   font-family: 'SignPainterHouseScript', serif;
 }
 
@@ -563,10 +559,10 @@ i[class*=" fa-"] {
   font-family: 'Pixelcraft', serif;
 }
 
-.tph_font15-buttons .botones-contenedor *,
-.tph_font15-buttons .select-contenedor *,
-.tph_font15-buttons .large-button-container *,
-.tph_font15-buttons .small-button-container * {
+.tph_font15-buttons .settings-container *,
+.tph_font15-buttons .select-menu *,
+.tph_font15-buttons .url-container2 *,
+.tph_font15-buttons .url-container * {
   font-family: 'Pixelcraft', serif;
 }
 
@@ -580,10 +576,10 @@ i[class*=" fa-"] {
   font-family: 'GBShinto-Regular', serif;
 }
 
-.tph_font16-buttons .botones-contenedor *,
-.tph_font16-buttons .select-contenedor *,
-.tph_font16-buttons .large-button-container *,
-.tph_font16-buttons .small-button-container * {
+.tph_font16-buttons .settings-container *,
+.tph_font16-buttons .select-menu *,
+.tph_font16-buttons .url-container2 *,
+.tph_font16-buttons .url-container * {
   font-family: 'GBShinto-Regular', serif;
 }
 
@@ -597,10 +593,10 @@ i[class*=" fa-"] {
   font-family: 'Vampire_Wars_Italic', serif;
 }
 
-.tph_font17-buttons .botones-contenedor *,
-.tph_font17-buttons .select-contenedor *,
-.tph_font17-buttons .large-button-container *,
-.tph_font17-buttons .small-button-container * {
+.tph_font17-buttons .settings-container *,
+.tph_font17-buttons .select-menu *,
+.tph_font17-buttons .url-container2 *,
+.tph_font17-buttons .url-container * {
   font-family: 'Vampire_Wars_Italic', serif;
 }
 
@@ -614,10 +610,10 @@ i[class*=" fa-"] {
   font-family: 'chinese_rocks_rg', serif;
 }
 
-.tph_font18-buttons .botones-contenedor *,
-.tph_font18-buttons .select-contenedor *,
-.tph_font18-buttons .large-button-container *,
-.tph_font18-buttons .small-button-container * {
+.tph_font18-buttons .settings-container *,
+.tph_font18-buttons .select-menu *,
+.tph_font18-buttons .url-container2 *,
+.tph_font18-buttons .url-container * {
   font-family: 'chinese_rocks_rg', serif;
 }
 
@@ -631,10 +627,10 @@ i[class*=" fa-"] {
   font-family: 'HARRYP', serif;
 }
 
-.tph_font19-buttons .botones-contenedor *,
-.tph_font19-buttons .select-contenedor *,
-.tph_font19-buttons .large-button-container *,
-.tph_font19-buttons .small-button-container * {
+.tph_font19-buttons .settings-container *,
+.tph_font19-buttons .select-menu *,
+.tph_font19-buttons .url-container2 *,
+.tph_font19-buttons .url-container * {
   font-family: 'HARRYP', serif;
 }
 
@@ -648,15 +644,15 @@ i[class*=" fa-"] {
   font-family: 'zrnic_rg', serif;
 }
 
-.tph_font20-buttons .botones-contenedor *,
-.tph_font20-buttons .select-contenedor *,
-.tph_font20-buttons .large-button-container *,
-.tph_font20-buttons .small-button-container * {
+.tph_font20-buttons .settings-container *,
+.tph_font20-buttons .select-menu *,
+.tph_font20-buttons .url-container2 *,
+.tph_font20-buttons .url-container * {
   font-family: 'zrnic_rg', serif;
 }
 
 /* === ANIMACIONES === */
-@keyframes arcoiris {
+@keyframes rainbow {
   0% { color: red; }
   16.6% { color: orange; }
   33.3% { color: yellow; }
@@ -666,11 +662,11 @@ i[class*=" fa-"] {
   100% { color: red; }
 }
 
-.arcoiris {
+.rainbow {
   font-size: 1.2em;
   font-weight: bold;
   letter-spacing: 0.2em;
-  animation: arcoiris 18s linear infinite;
+  animation: rainbow 18s linear infinite;
 }
 
 /* === FILTRO EXTRA (Index) === */
@@ -746,7 +742,7 @@ i[class*=" fa-"] {
   font-size: 21.6px;
   background: rgba(0, 0, 0, 0.7);
   padding: 12px 43px;
-  border-radius: 0;
+  border-radius: 1px;
   border: 2px solid rgba(255, 255, 255, 0.4);
   width: 80%;
   max-width: 500px;

@@ -8,6 +8,11 @@ javascript/menu2.js
 javascript/menu3.js
 settings.html
 css/general.css
+css/all.min.css
+web-fonts/fa-v4compatibility.ttf
+web-fonts/fa-solid-900.ttf
+web-fonts/fa-regular-400.ttf
+web-fonts/fa-brands-400.ttf
 web-fonts/go3v2.ttf
 web-fonts/Transformer.ttf
 web-fonts/old_stamper.ttf

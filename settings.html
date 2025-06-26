@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>🎮 TU PS4 HEN | Ajustes 🎮</title>
   <link rel="stylesheet" href="css/general.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
 </head>
 
 <body>
@@ -12,26 +12,25 @@
     <br><br>
     <h2>
       <i class="fab fa-playstation"></i>  
-      <span class="arcoiris">AJUSTES</span>  
+      <span class="rainbow">AJUSTES</span>  
       <i class="fab fa-playstation"></i>
     </h2>
 
     <main>
-      <div class="contenedor-transparente">
+      <div class="settings-container">
         <h4>Configuracion Personalizada de TU PS4 HEN</h4>
         <h3>¿Que deseas modificar?</h3>
 
-		<div class="select-contenedor">
-		  <select id="opcion1">
+		   <div class="select-menu">
+		        <select id="opcion1">
 			  <option disabled selected>⇐ Configuración ⇒</option>
 			  <option value="tph_changeTitle">🛠️ Cambiar título principal</option>
                           <option value="tph_changetitleHTML">🛠️ Cambiar Titulo de Pestaña HTML</option>
                           <option value="tph_showuseragent">🛠️ Ocultar/Mostrar Info del Sistema & Navegador</option>
 			  <option disabled>⇐ Información ⇒</option>
                           <option value="infoAlert">📜 Fase Testing</option>
-		  </select>
-		  </select>
-
+		        </select>
+			
 			<select id="opcion2">
 			  <option disabled selected>⇐ Cambiar Fondo ⇒</option>
 			  <option value="tph_img1">🖼️ [Extra] PlayStation (1)</option>
@@ -98,14 +97,15 @@
 			  <option value="tph_iconsdefault">🔄 Restablecer Iconos</option>
 			</select>
 
-		<select id="opcion4">
-		  <option disabled selected>-- En progeso --</option>
-		  <option value="valor3a">No disponible 1</option>
-		  <option value="valor3b">No disponible 2</option>
-		  <option disabled>-- En progreso --</option>
-		  <option value="valor3a">No disponible 1</option>
-		  <option value="valor3b">No disponible 2</option>
-		</select>
+			<select id="opcion4">
+			  <option disabled selected> ⇐ Personalizar ⇒</option>
+			  <option value="tph_showcredits">🎨 Mostrar/Ocultar Creditos</option>
+			  <option disabled>⇐ Texto ⇒</option>
+			  <option disabled>⇐ Botones & Desplegables ⇒</option>
+			  <option disabled>⇐ Temas Predefinidos ⇒</option>
+			  <option disabled>⇐ Configuración ⇒</option>
+			  <option value="tph_defaultstyle">♻️ Restablecer estilo por defecto</option>
+			</select>
 		
 		<select id="opcion5">
 		  <option disabled selected>-- En progeso --</option>
@@ -180,20 +180,20 @@
 		</select>
 	     </div>
 
-             <div class="botones-contenedor">
-		<button class="boton" onclick="window.location.href='index.html';">
+             <div class="settings-button">
+		<button class="button00" onclick="window.location.href='index.html';">
 		  <i class="fa-solid fa-arrow-rotate-left"></i> Volver
 		</button>
 		
-		<button class="boton" onclick="tph_resetSettings()">
+		<button class="button00" onclick="tph_resetSettings()">
 		  <i class="fa-solid fa-sliders"></i> Restablecer
 		</button>
 		
-		<button class="boton" onclick="tph_exportJSON()">
+		<button class="button00" onclick="tph_exportJSON()">
 		  <i class="fa-solid fa-file-export"></i> Exportar
 		</button>
 		
-		<button class="boton" onclick="tph_importJSON()">
+		<button class="button00" onclick="tph_importJSON()">
 		  <i class="fa-solid fa-file-import"></i> Importar
 		</button>
              </div>
