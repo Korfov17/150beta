@@ -41,6 +41,22 @@ background/extra2.jpg
 background/extra8.jpg
 background/extra4.jpg
 background/extra15.jpg
+jailbreak-ps4/jailbreak.html
+jailbreak-ps4/payload/GoldHEN/goldhen.bin
+jailbreak-ps4/exploit-psfree/exploit.mjs
+jailbreak-ps4/exploit-psfree/chain.mjs
+jailbreak-ps4/exploit-psfree/config.mjs
+jailbreak-ps4/exploit-psfree/constants.mjs
+jailbreak-ps4/exploit-psfree/rw.mjs
+jailbreak-ps4/exploit-psfree/int64.mjs
+jailbreak-ps4/exploit-psfree/int64.js
+jailbreak-ps4/exploit-psfree/alert.mjs
+jailbreak-ps4/exploit-psfree/utils.mjs
+jailbreak-ps4/exploit-psfree/memtools.mjs
+jailbreak-ps4/exploit-psfree/kexploit.js
+jailbreak-ps4/exploit-psfree/offset.mjs
+jailbreak-ps4/exploit-psfree/rop.js
+jailbreak-ps4/exploit-psfree/mem.mjs
 
 NETWORK:
 *
