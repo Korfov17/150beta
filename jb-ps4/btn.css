@@ -1,0 +1,52 @@
+/* CSS actualizado para botón blanco */
+.btnkme {
+  align-items: center;
+  appearance: none;
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px,
+              rgba(0, 0, 0, 0.08) 0 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #333333;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Courier New', Courier, monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.btnkme:focus {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1.5px inset,
+              rgba(0, 0, 0, 0.1) 0 2px 4px,
+              rgba(0, 0, 0, 0.08) 0 7px 13px -3px,
+              rgba(0, 0, 0, 0.3) 0 -3px 0 inset;
+}
+
+.btnkme:hover {
+  box-shadow: rgba(0, 0, 0, 0.12) 0 4px 8px,
+              rgba(0, 0, 0, 0.1) 0 7px 13px -3px,
+              rgba(0, 0, 0, 0.25) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btnkme:active {
+  box-shadow: rgba(0, 0, 0, 0.3) 0 3px 7px inset;
+  transform: translateY(2px);
+}
