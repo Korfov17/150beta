@@ -1,1 +1,179 @@
-efeff
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto GoldHEN Host</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #000000;
+      height: 80%;
+      background-position: center;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    .loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -75px 0 0 -75px;
+      border: 10px solid #1f1e1e;
+      border-radius: 50%;
+      border-top: 10px solid #d40606;
+      border-left: 10px solid #d40606;
+      width: 120px;
+      height: 120px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .info {
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 45px;
+      font-family: sans-serif;
+      color: #d40606;
+      transform: translate(-50%, -50%);
+    }
+
+    #hen-panel button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px black;
+    }
+  </style>
+
+  <script>
+    (function checkUserAgentAndInit() {
+      const ua = navigator.userAgent;
+      const isPS4 = ua.includes("PlayStation 4");
+      const fwMatch = ua.match(/PlayStation 4\/([\d.]+)/);
+      const detectedFW = fwMatch ? fwMatch[1] : null;
+
+      if (isPS4 && detectedFW === "9.00") {
+        // ✅ Cargar scripts dinámicamente solo si se cumple el requisito
+        const scripts = [
+          "./int64.js",
+          "./rop.js",
+          "./kexploit.js",
+          "./alert.mjs"
+        ];
+        scripts.forEach(src => {
+          const s = document.createElement("script");
+          s.src = src;
+          if (src.endsWith(".mjs")) s.type = "module";
+          document.head.appendChild(s);
+        });
+      } else {
+        // ❌ Bloquea y muestra alerta con detalle
+        let mensaje = "";
+        if (isPS4) {
+          mensaje = `Estás en PlayStation 4 firmware ${detectedFW || "desconocido"}.\nEste host es solo compatible con 9.00.`;
+        } else {
+          let sistema = "dispositivo desconocido";
+          if (/Windows/i.test(ua)) sistema = "Windows";
+          else if (/Linux/i.test(ua)) sistema = "Linux";
+          else if (/Android/i.test(ua)) sistema = "Android";
+          else if (/iPhone/i.test(ua)) sistema = "iPhone";
+          else if (/iPad/i.test(ua)) sistema = "iPad";
+          else if (/Macintosh/i.test(ua)) sistema = "MacOS";
+          mensaje = `Este host solo funciona desde una PlayStation 4 con firmware 9.00.\nHas accedido desde: ${sistema}.`;
+        }
+
+        alert(mensaje);
+        document.head.innerHTML = '';
+        document.body.innerHTML = '';
+        document.body.style.backgroundColor = 'white';
+        throw new Error("Dispositivo o firmware no compatible");
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <h1 id="progress" style="font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:yellow;"></h1><br>
+
+  <div id="loader" class="loader"></div>
+
+  <div id="hen-panel" style="display:none; text-align:center; margin-top:20px;">
+    <h2 style="color:yellow; text-shadow: 2px 2px 4px black;">Selecciona un HEN</h2>
+
+    <button onclick="launchHEN('goldhen.bin', 'GoldHEN')" style="background-color:#d40606; color:white;">
+      GoldHEN
+    </button>
+
+    <button onclick="launchHEN('goldhen2.bin', 'GoldHEN 2.2.5b')" style="background-color:#065fd4; color:white;">
+      GoldHEN 2.2.5b
+    </button>
+
+    <button onclick="launchHEN('hen_custom.bin', 'Custom HEN')" style="background-color:#0a820a; color:white;">
+      Custom HEN
+    </button>
+  </div>
+
+  <div id="allset" class="info" style="display:none;font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:yellow;">
+    Liberación completada. ¡Cierra el navegador!
+  </div>
+
+  <script>
+    function loadPayload(payloadFile) {
+      var req = new XMLHttpRequest();
+      req.responseType = "arraybuffer";
+      req.open('GET', payloadFile);
+      req.send();
+
+      req.onreadystatechange = function () {
+        if (req.readyState === 4) {
+          const PLD = req.response;
+          const payload_buffer = chain.syscall(477, 0, PLD.byteLength * 4, 7, 0x1002, -1, 0);
+          const pl = p.array_from_address(payload_buffer, PLD.byteLength * 4);
+          const padding = new Uint8Array(4 - (PLD.byteLength % 4) % 4);
+          const tmp = new Uint8Array(PLD.byteLength + padding.byteLength);
+          tmp.set(new Uint8Array(PLD), 0);
+          tmp.set(padding, PLD.byteLength);
+          const shellcode = new Uint32Array(tmp.buffer);
+          pl.set(shellcode, 0);
+
+          const pthread = p.malloc(0x10);
+          chain.call(libKernelBase.add32(OFFSET_lk_pthread_create), pthread, 0x0, payload_buffer, 0);
+          allset();
+        }
+      };
+    }
+
+    function jbdone() {
+      showHenPanel();
+    }
+
+    function showHenPanel() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("hen-panel").style.display = "block";
+    }
+
+    function launchHEN(payloadFile, displayName) {
+      document.getElementById("hen-panel").style.display = "none";
+      progress.innerHTML = `Cargando ${displayName}... por favor espere`;
+      loadPayload(payloadFile);
+    }
+
+    function allset() {
+      document.getElementById("allset").style.display = "block";
+    }
+  </script>
+</body>
+</html>
+ 
