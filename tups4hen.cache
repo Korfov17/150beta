@@ -41,6 +41,22 @@ background/extra2.jpg
 background/extra8.jpg
 background/extra4.jpg
 background/extra15.jpg
+jb-ps4/index.html
+jb-ps4/goldhen.bin
+jb-ps4/exploit.mjs
+jb-ps4/chain.mjs
+jb-ps4/config.mjs
+jb-ps4/constants.mjs
+jb-ps4/rw.mjs
+jb-ps4/int64.mjs
+jb-ps4/int64.js
+jb-ps4/alert.mjs
+jb-ps4/utils.mjs
+jb-ps4/memtools.mjs
+jb-ps4/kexploit.js
+jb-ps4/offset.mjs
+jb-ps4/rop.js
+jb-ps4/mem.mjs
 
 NETWORK:
 *
